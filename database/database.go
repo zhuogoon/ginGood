@@ -23,7 +23,7 @@ func InitDB() {
 	fmt.Println("Database connected successfully")
 
 	// 可以在这里执行自动迁移
-	err = DB.AutoMigrate(&models.Reg{})
+	err = DB.AutoMigrate(&models.RequestBody{})
 	if err != nil {
 		log.Fatalf("Migration failed: %v", err)
 	}

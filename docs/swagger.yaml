@@ -1,0 +1,50 @@
+definitions:
+  models.RequestBody:
+    type: object
+  models.ResponseBody:
+    properties:
+      code:
+        type: integer
+      msg:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      description: 登录
+      parameters:
+      - description: username
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.RequestBody'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseBody'
+      summary: 登录
+      tags:
+      - 登录
+  /register:
+    post:
+      description: 注册
+      parameters:
+      - description: username
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.RequestBody'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseBody'
+      summary: 注册
+      tags:
+      - 注册
+swagger: "2.0"
